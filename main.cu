@@ -86,9 +86,11 @@ void PrintGPUDeviceInfo() {
 					device_prop.regsPerBlock);
 			printf("\tWarp size: %d\n",
 					device_prop.warpSize);
-			printf("\tMultiprocessor count: %d\n", device_prop.multiProcessorCount);
-			printf("\tMaximum number of threads per multiprocessor: %d\n", device_prop.maxThreadsPerMultiProcessor);
+			printf("\tSM (streaming multiprocessor) count: %d\n", device_prop.multiProcessorCount);
+			printf("\tWarps per SM: %d\n", static_cast<int>(std::floor(device_prop.maxThreadsPerMultiProcessor/device_prop.warpSize)));
+			printf("\tMaximum number of threads per SM: %d\n", device_prop.maxThreadsPerMultiProcessor);
 			printf("\tMaximum number of threads per block: %d\n", device_prop.maxThreadsPerBlock);
+			printf("\tMaximum number of threads total: %d\n", device_prop.multiProcessorCount * device_prop.maxThreadsPerMultiProcessor);
 			printf("\tMaximum sizes of each dimension of a block: %d * %d * %d\n",
 					device_prop.maxThreadsDim[0], device_prop.maxThreadsDim[1], device_prop.maxThreadsDim[2]);
 			printf("\tMaximum sizes of each dimension of a grid: %d * %d * %d\n",

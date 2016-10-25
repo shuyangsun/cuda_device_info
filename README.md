@@ -28,9 +28,11 @@ Device 0: "TITAN X (Pascal)"
 	Total amount of shared memory per block: 48.00 KB (49152 bytes)
 	Total number of registers available per block: 65536
 	Warp size: 32
-	Multiprocessor count: 28
-	Maximum number of threads per multiprocessor: 2048
+	SM (streaming multiprocessor) count: 28
+	Warps per SM: 64
+	Maximum number of threads per SM: 2048
 	Maximum number of threads per block: 1024
+	Maximum number of threads total: 57344
 	Maximum sizes of each dimension of a block: 1024 * 1024 * 64
 	Maximum sizes of each dimension of a grid: 2147483647 * 65535 * 65535
 	Maximum memory pitch: 2.00 GB (2147483647 bytes)
